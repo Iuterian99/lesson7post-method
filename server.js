@@ -1,23 +1,44 @@
-const http = require("http");
+// const http = require("http");
+
+// const server = http.createServer((req, res) => {
+//   if (req.url == "/end") {
+//     if (req.method == "GET") {
+//       res.writeHead(200, { "Content-Type": "application/json;" });
+//       res.end("Jsonda yozildi!");
+//     } else if (req.method == "POST") {
+//       req.on("data", (chunk) => {
+//         console.log(JSON.parse(chunk));
+//       });
+//       req.on("end", () => {
+//         res.writeHead(200, { "Content-Type": "application/json" });
+//         res.end("Post metodidan keldi");
+//       });
+//     }
+//   }
+// });
+
+// server.listen(2000, () => {
+//   console.log("2000");
+// });
+
 const fs = require("fs");
 
-const server = http.createServer((req, res) => {
-  if (req.url == "/books") {
-    if (req.method == "POST") {
-      req.on("data", (chunk) => {
-        const data = JSON.parse(chunk);
-        fs.writeFile("./data.json", JSON.stringify(data, null, 2), (err) => {
-          if (err) log.error(err);
-        });
-      });
-      req.on("end", () => {
-        res.writeHead(200, { "Content-Type": "application/json" });
-        res.end("created");
-      });
-    }
-  }
-});
+// ------------- fs.rename() --------------------------------------------
 
-server.listen(2000, () => {
-  console.log(2000);
+// fs.rename("first.js", "second.js", (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(ok);
+//   }
+// });
+
+// ------------------ fs.readFile() --------------------------------------
+
+fs.readFile("./second.js", (err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data.toString());
+  }
 });
