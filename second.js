@@ -1,1 +1,3 @@
-<h1>Salom dunyo</h1>;
+salom dunyo
+Hello world
+Hello world

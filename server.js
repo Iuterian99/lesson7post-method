@@ -35,10 +35,18 @@ const fs = require("fs");
 
 // ------------------ fs.readFile() --------------------------------------
 
-fs.readFile("./second.js", (err, data) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(data.toString());
-  }
-});
+// fs.readFile("./second.js", (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data.toString());
+//   }
+// });
+
+// ------------------- fs.writeFile() & fs.appendFile() -----------------------
+
+// fs.appendFile("./second.js", "\nHello world", (err) => {
+//   if (err) {
+//     console.log(err);
+//   }
+// });
